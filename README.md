@@ -182,7 +182,8 @@ PublicController – No JWT required:
     }
     
 # PrivateController – JWT required:
-[Authorize(Policy = "PrivateAccess")]  // Authentication required for private access
+   
+    [Authorize(Policy = "PrivateAccess")]  // Authentication required for private access
 
     [Route("api/[controller]")]
     
