@@ -153,8 +153,11 @@ Controllers are separated into public and private endpoints. The private endpoin
 PublicController – No JWT required:
 
     [AllowAnonymous]  // No authentication required for public access
+    
     [Route("api/[controller]")]
+    
     [ApiController]
+    
     public class LoginController : ControllerBase
     {
         IConfiguration _configuration = null;
@@ -180,8 +183,11 @@ PublicController – No JWT required:
     
 # PrivateController – JWT required:
 [Authorize(Policy = "PrivateAccess")]  // Authentication required for private access
+
     [Route("api/[controller]")]
+    
     [ApiController]
+    
     public class UsersController : ControllerBase
     {
         public UsersController()
