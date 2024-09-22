@@ -24,10 +24,10 @@ Testing the API
 
 Conclusion
 
-1. Overview
+# Overview
 This documentation provides an overview and technical details for implementing JWT authentication and authorization in an ASP.NET Core 5 Web API, along with a custom JWT middleware to handle token validation. The application separates public and private resources, with secure access to private resources granted only through valid JWT tokens.
 
-2. Prerequisites
+# Prerequisites
    
 ASP.NET Core 5.0
 
@@ -37,11 +37,11 @@ Visual Studio 2019/2022 or VS Code
 
 Postman or Curl (for testing APIs)
 
-4. JWT Authentication & Authorization
+# JWT Authentication & Authorization
    
 JWT (JSON Web Token) is a secure method for transmitting information between parties as a JSON object. It is commonly used for authorization in web applications. This implementation uses a custom middleware to manually validate and extract claims from the token.
 
-6. Implementation Details
+# Implementation Details
 4.1 JWT Settings in appsettings.json
    
 The JWT secret key and other settings are stored in the appsettings.json file. This secret key is used to sign the JWT tokens for secure communication.
@@ -116,7 +116,7 @@ public class JwtMiddleware
     }
 }
 
-4.3 Token Service
+# Token Service
 
 The TokenService is responsible for generating JWT tokens for authenticated users. It fetches the secret key from the configuration and creates a token with claims, including the username.
 
@@ -146,7 +146,7 @@ public class TokenService
         return tokenHandler.WriteToken(token);
     }
 }
-4.4 Securing Controllers
+# Securing Controllers
 
 Controllers are separated into public and private endpoints. The private endpoints require a valid JWT token for access.
 
@@ -178,7 +178,7 @@ PublicController – No JWT required:
         }
     }
     
-PrivateController – JWT required:
+# PrivateController – JWT required:
 [Authorize(Policy = "PrivateAccess")]  // Authentication required for private access
     [Route("api/[controller]")]
     [ApiController]
@@ -196,7 +196,7 @@ PrivateController – JWT required:
         }
     }
     
-4.5 Global Error Handling Middleware
+# Global Error Handling Middleware
 
 The global error handler is used to manage exceptions and return consistent error responses across the API.
 
@@ -232,9 +232,9 @@ public class ErrorHandlerMiddleware
         return context.Response.WriteAsync(JsonConvert.SerializeObject(response));
     }
 }
-5. Testing the API
+# Testing the API
 
-5.1 Public Endpoint Testing
+# Public Endpoint Testing
 
 Endpoint: GET /api/public/info
 
@@ -246,7 +246,7 @@ Expected Response:
   "message": "This is public information."
 }
 
-5.2 Private Endpoint Testing
+# Private Endpoint Testing
 
 Endpoint: GET /api/private/info
 
@@ -257,7 +257,7 @@ Expected Response:
 {
   "message": "Hello <username>, this is private information."
 }
-6. Conclusion
+# Conclusion
 
 This implementation demonstrates how to build a secure ASP.NET Core 5 Web API with JWT authentication using custom middleware. By storing the JWT secret key in appsettings.json, leveraging middleware for token validation, and segregating public and private API resources, the API provides a robust solution for managing secure access.
 
