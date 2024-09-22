@@ -29,11 +29,11 @@ This documentation provides an overview and technical details for implementing J
 
 # Prerequisites
    
-ASP.NET Core 5.0
+ASP.NET Core 5.0 [You can use ASP.NET Core 8.0]
 
 Visual Studio 2019/2022 or VS Code
 
-.NET Core SDK 5.x
+.NET Core SDK 5.x [You can use .NET Core SDK 8.x]
 
 Postman or Curl (for testing APIs)
 
