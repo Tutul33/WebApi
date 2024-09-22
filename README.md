@@ -243,7 +243,7 @@ public class ErrorHandlerMiddleware
 
 # Public Endpoint Testing
 
-Endpoint: GET /api/public/info
+Endpoint: GET /api/Login/info
 
 Authorization: None required.
 
@@ -253,9 +253,18 @@ Expected Response:
   "message": "This is public information."
 }
 
+Endpoint: GET /api/Login/generateToken
+
+Authorization: None required.
+
+Expected Response:
+
+{
+  "message": "This is public information."
+}
 # Private Endpoint Testing
 
-Endpoint: GET /api/private/info
+Endpoint: GET /api/Users/info
 
 Authorization: Bearer <JWT Token>
 
