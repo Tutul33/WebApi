@@ -4,7 +4,7 @@ Table of Contents:
 
 Overview
 
-Prerequisites
+# Prerequisites
 
 JWT Authentication & Authorization
 
