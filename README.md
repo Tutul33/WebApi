@@ -42,7 +42,7 @@ Postman or Curl (for testing APIs)
 JWT (JSON Web Token) is a secure method for transmitting information between parties as a JSON object. It is commonly used for authorization in web applications. This implementation uses a custom middleware to manually validate and extract claims from the token.
 
 # Implementation Details
-4.1 JWT Settings in appsettings.json
+## JWT Settings in appsettings.json
    
 The JWT secret key and other settings are stored in the appsettings.json file. This secret key is used to sign the JWT tokens for secure communication.
 
@@ -54,7 +54,7 @@ The JWT secret key and other settings are stored in the appsettings.json file. T
 
 Secret: A unique key used for signing and validating the JWT tokens. This key should be kept secure and confidential.
 
-4.2 Custom JWT Middleware
+## Custom JWT Middleware
 
 The JWT Middleware is responsible for:
 
