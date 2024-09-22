@@ -150,7 +150,7 @@ public class TokenService
 
 Controllers are separated into public and private endpoints. The private endpoints require a valid JWT token for access.
 
-PublicController – No JWT required:
+# PublicController – No JWT required:
 
     [AllowAnonymous]  // No authentication required for public access
     
